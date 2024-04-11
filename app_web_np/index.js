@@ -23,8 +23,6 @@ app.get('/verifica-num-primo/:n', function(req, res){
     res.send(primo)
 })
 
-
-
 app.listen(PORT, function(){
     console.log('App rodando na porta ' + PORT)
 })
