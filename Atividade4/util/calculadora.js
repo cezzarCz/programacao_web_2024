@@ -14,8 +14,11 @@ function multiplicar(a, b) {
 }
 
 function dividir(a, b) {
-    
-    return Number(a) / Number(b)
+    if (b > 0){
+        return Number(a) / Number(b)
+    } else{
+        return "Não é possível dividir por zero."
+    }
 }
 
 module.exports = {
