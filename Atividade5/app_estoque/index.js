@@ -21,6 +21,22 @@ app.get('/remover/:id', function(req, res) {
     estoque.removerProdutos(id)
     res.send("Produto removido com sucesso.")
 })
+
+app.get('/editar/:id/:nomeNovo/:qtdNova', function(req, res){
+    let id = req.params.id
+    let nomeNovo = req.params.nomeNovo
+    let qtdNova = req.params.qtdNova
+
+    let produtoEditado = estoque.editarProdutos(id, nomeNovo, qtdNova)
+    
+    if(produtoEditado){
+        res.send(produtoEditado)
+    } else {
+        res.send('Produto não encontrado.')
+    }
+})
+
+
 app.listen(PORTA, function() {
     console.log('App rodando na porta ' + PORTA)
 })
