@@ -15,7 +15,11 @@ exports.calcular = (numero1, operacao, numero2) => {
             resultado = n1 * n2;
             break;
         case '/':
-            resultado = n1 / n2;
+            if (n2 == 0) {
+                resultado = 'erro_divisao_por_zero'
+            } else  {
+                resultado = n1 / n2;
+            }
             break;
         default:
             resultado = 'Operação inválida';
